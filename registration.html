@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Farmer Registration</title>
+  <meta charset="UTF-8">
+</head>
+
+<body style="background-color:#edffeb;">
+
+  <h2><font face="Times New Roman" size="4" color="#363020"><b>Farmer Registration Form</b></font></h2>
+
+  <form>
+    <fieldset>
+      <legend><font face="Times New Roman" size="3" color="#363020">Farmer Details</font></legend>
+
+      <label><font face="Times New Roman" size="3" color="#363020">Name:</font></label>
+      <input type="text" name="name" placeholder="Enter full name" required autofocus><br><br>
+
+      <label><font face="Times New Roman" size="3" color="#363020">Mobile Number:</font></label>
+      <input type="tel" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required><br><br>
+
+      <label><font face="Times New Roman" size="3" color="#363020">Email:</font></label>
+      <input type="email" name="email" placeholder="example@mail.com" required><br><br>
+
+      <label><font face="Times New Roman" size="3" color="#363020">Plot ID:</font></label>
+      <input type="text" name="plotid" required><br><br>
+
+      <label><font face="Times New Roman" size="3" color="#363020">Village:</font></label>
+      <input type="text" name="village"><br><br>
+
+      <label><font face="Times New Roman" size="3" color="#363020">Crop Stage:</font></label>
+      <select name="cropstage" required>
+        <option value="germination">Germination</option>
+        <option value="tillering">Tillering</option>
+        <option value="grandgrowth">Grand Growth</option>
+        <option value="maturity">Maturity</option>
+      </select><br><br>
+
+      <label><font face="Times New Roman" size="3" color="#363020">Soil Type:</font></label>
+      <input type="text" name="soiltype"><br><br>
+
+      <label><font face="Times New Roman" size="3" color="#363020">Irrigation Method:</font></label>
+      <input type="text" name="irrigation"><br><br>
+
+      <label><font face="Times New Roman" size="3" color="#363020">Date:</font></label>
+      <input type="date" name="date" required><br><br>
+
+      <label><font face="Times New Roman" size="3" color="#363020">Farm Photo:</font></label>
+      <input type="file" name="farmphoto" accept="image/*"><br><br>
+
+      <input type="submit" value="Register">
+    </fieldset>
+  </form>
+
+</body>
+</html>
