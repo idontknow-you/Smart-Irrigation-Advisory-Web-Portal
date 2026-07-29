@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html>
-<head><title>Farm Plot Map</title></head>
+<html lang="en">
+<head>
+  <title>Farm Plot Map</title>
+  <meta charset="UTF-8">
+</head>
+
 <body style="background-color:#edffeb;">
   <h2><font face="Times New Roman" size="4" color="#363020"><b>Farm Plot Navigation</b></font></h2>
 
-  <img src="images/farm-map.jpg" usemap="#farmmap" alt="Farm Map">
+  <img src="assets/farm-map.png" usemap="#farmmap" alt="Farm Map" width="600" height="400">
+
   <map name="farmmap">
     <area shape="rect" coords="34,44,270,350" href="plotA.html" alt="Plot A">
     <area shape="circle" coords="337,300,44" href="plotB.html" alt="Plot B">
     <area shape="poly" coords="500,60,560,90,580,150,480,200" href="plotC.html" alt="Plot C">
   </map>
+
+  <p><font face="Times New Roman" size="3" color="#363020">
+    Click on any plot to view detailed crop and irrigation information.
+  </font></p>
 </body>
 </html>
