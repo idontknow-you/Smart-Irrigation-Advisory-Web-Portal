@@ -1,23 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Farm Plot Map</title>
+  <title>Farm Plot Map - Combined</title>
   <meta charset="UTF-8">
 </head>
 
-<body style="background-color:#edffeb;">
+<body style="background-color:#ffffff;" id="top">
+  <!-- Header -->
+  <header>
+    <img id="logo" src="assets/full_logo.png" alt="Logo" height="40">
+
+    <h1><font face="Times New Roman" size="6" color="#363020"><b>Smart Irrigation Advisory System</b></font></h1>
+    <p><font face="Times New Roman" size="4" color="#363020"><i>Smart Irrigation using AI & Sensor Technology</i></font></p>
+    <hr color="#363020">
+  </header>
+  <!-- Navigation -->
+  <nav>
+    <font face="Times New Roman" size="3" color="#363020">
+      <a href="index.html">Home</a> |
+      <a href="farm-info.html">Farm Dashboard</a> |
+      <a href="advisory.html">Irrigation Advisory</a> |
+      <a href="sensor-data.html">Sensor Data</a> |
+      <a href="contact.html">Contact</a>
+    </font>
+    <hr color="#363020">
+  </nav>
+  <!-- Main Navigation Map -->
   <h2><font face="Times New Roman" size="4" color="#363020"><b>Farm Plot Navigation</b></font></h2>
 
   <img src="assets/farm-map.png" usemap="#farmmap" alt="Farm Map" width="600" height="400">
 
   <map name="farmmap">
-    <area shape="rect" coords="34,44,270,350" href="plotA.html" alt="Plot A">
-    <area shape="circle" coords="337,300,44" href="plotB.html" alt="Plot B">
-    <area shape="poly" coords="500,60,560,90,580,150,480,200" href="plotC.html" alt="Plot C">
+    <area shape="rect" coords="34,44,270,350" href="#plotA" alt="Plot A">
+    <area shape="circle" coords="337,300,44" href="#plotB" alt="Plot B">
+    <area shape="poly" coords="500,60,560,90,580,150,480,200" href="#plotC" alt="Plot C">
   </map>
 
   <p><font face="Times New Roman" size="3" color="#363020">
     Click on any plot to view detailed crop and irrigation information.
   </font></p>
+
+  <hr>
+
+  <!-- Plot A Section -->
+  <a name="plotA"></a>
+  <h2><font face="Times New Roman" size="4" color="#363020"><b>Plot A - Sugarcane Field</b></font></h2>
+  <div style="position:relative; display:inline-block;">
+    <img src="assets/farm-map.png" alt="Farm Map" width="600" height="400">
+    <!-- Highlight rectangle for Plot A -->
+    <div style="position:absolute; top:44px; left:85px; 
+                width:236px; height:306px; 
+                border:3px solid red; background-color:rgba(255,0,0,0.2);">
+    </div>
+  </div>
+  <p><font face="Times New Roman" size="3" color="#363020">
+    Crop: Sugarcane<br>
+    Soil Moisture: <mark>22%</mark><br>
+    Weather: Sunny<br>
+    Recommended Irrigation: <em>2.5 hours</em><br>
+    Water Requirement: <strong>18 mm</strong>
+  </font></p>
+  <p><a href="#top">Back to Map</a></p>
+
+  <hr>
+
+  <!-- Plot B Section -->
+  <a name="plotB"></a>
+  <h2><font face="Times New Roman" size="4" color="#363020"><b>Plot B - Paddy Field</b></font></h2>
+  <div style="position:relative; display:inline-block;">
+    <img src="assets/farm-map.png" alt="Farm Map" width="600" height="400">
+    <!-- Highlight circle for Plot B -->
+    <div style="position:absolute; top:220px; left:320px; 
+                width:100px; height:100px; 
+                border:3px solid blue; border-radius:50%; 
+                background-color:rgba(0,0,255,0.2);">
+    </div>
+  </div>
+  <p><font face="Times New Roman" size="3" color="#363020">
+    Crop: Paddy<br>
+    Soil Moisture: <mark>35%</mark><br>
+    Weather: Cloudy<br>
+    Recommended Irrigation: <em>No irrigation today</em><br>
+    Water Requirement: <strong>0 mm</strong>
+  </font></p>
+  <p><a href="#top">Back to Map</a></p>
+
+  <hr>
+
+  <!-- Plot C Section -->
+  <a name="plotC"></a>
+  <h2><font face="Times New Roman" size="4" color="#363020"><b>Plot C - Maize Field</b></font></h2>
+  <div style="position:relative; display:inline-block;">
+    <img src="assets/farm-map.png" alt="Farm Map" width="600" height="400">
+    <!-- Highlight polygon (approx bounding box) for Plot C -->
+    <div style="position:absolute; top:90px; left:420px; 
+                width:100px; height:140px; 
+                border:3px solid green; background-color:rgba(0,128,0,0.2);">
+    </div>
+  </div>
+  <p><font face="Times New Roman" size="3" color="#363020">
+    Crop: Maize<br>
+    Soil Moisture: <mark>18%</mark><br>
+    Weather: Partly Cloudy<br>
+    Recommended Irrigation: <em>3 hours</em><br>
+    Water Requirement: <strong>22 mm</strong>
+  </font></p>
+  <p><a href="#top">Back to Map</a></p>
+
 </body>
 </html>
