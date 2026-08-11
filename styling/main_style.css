@@ -1,0 +1,97 @@
+body{
+    margin: 20px;
+    margin-left: 60px;
+    padding-top: 100px;
+    background-color: #dbf1ca;
+}
+h1{
+    color: #230f07;
+}
+.divider {
+  border: none;
+  padding-top: 0;
+  border-top: 2px solid #6c9b76;
+}
+/* HEADER */
+.top-fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #f1f9ea;
+}
+.header {
+  background-color: #f1f9ea;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 20px;
+  margin: 6px;
+}
+#logo {
+  height: 55px;
+  width: auto;
+  flex-shrink: 0;
+}
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+.header-text h1{
+  margin: 0;
+  font-size: 30px;
+  font-family: "Times New Roman", serif;
+  color: #230f07;
+}
+.header-text p{
+    margin: 0;
+    font-size: 18px;
+    font-family: "Times New Roman", serif;
+    color: #230f07;
+} 
+
+/* NAV BAR */
+.top-fixed-nav {
+  position: fixed;
+  top: 69px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #f1f9ea;
+}
+.nav{
+  margin: 0px;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f1f9ea;
+  color: #dbf1ca;
+}
+.nav a:link{
+    color: #333122;
+}
+.nav a:visited{
+    color: #333122;
+}
+.nav a:hover{
+  color:white;
+}
+.nav-btn {
+  display: inline-block;       /* makes it behave like a button */
+  padding: 10px 20px;         /* space inside */
+  margin-right: 15px; 
+  background-color: #cfe9d4;   /* button background */
+  color: white;                /* text color */
+  text-decoration: none;       /* remove underline */
+  border-radius: 8px;          /* rounded corners */
+  font-weight: bold;           /* bold text */
+  transition: background 0.3s; /* smooth hover effect */
+}
+
+.nav-btn:hover {
+  background-color: #637758;   /* lighter green on hover */
+}
