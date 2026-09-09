@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <title>Smart Irrigation Advisory System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="stylesheet" type="text/css" href="styling/main_style.css">
+  <link rel="stylesheet" type="text/css" href="styling/style.css">
 
   <style>
     .nav{
@@ -19,7 +20,7 @@
         color: #333122;
     }
     .nav a:visited{
-        color: #333122;
+        color: #545138;
     }
     .nav a:hover{
       color:white;
@@ -33,7 +34,7 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
-      font-style: sans-serif;
+      font-family: "Times New Roman", sans-serif;
       transition: background 0.3s;
     }
     .nav-btn:hover {
@@ -46,15 +47,17 @@
 
   <!-- Header -->
   <div class="top-fixed-header">
-    <header class="header">
+    <header class="header" background="white">
       <img id="logo" src="assets/full_logo.png" alt="Logo">
       <div class="header-text">
-        <h1>Smart Irrigation Advisory System</h1>
-        <p><i>Smart Irrigation using AI & Sensor Technology</i></p>
+        <h1 color="#230f07" >Smart Irrigation Advisory System</h1>
+        <p align="center"><i>Smart Irrigation using AI & Sensor Technology</i></p>
       </div>
     </header>
     <div class="divider"></div>
   </div>
+
+
   <!-- Navigation -->
   <div class="top-fixed-nav">
     <nav class="nav" >
@@ -66,11 +69,15 @@
     </nav>
     <div class="divider"></div>
   </div>
+
+
   <!--Image-->
   <div class="full-width-wrap">
     <img class="image" src="assets/homepage img2.jpg" alt="irrigation" shad>
     <div class="image-overlay"></div>
   </div>
+
+
   <!-- Main Section -->
   <section>
     <article>
@@ -79,13 +86,59 @@
         This portal provides AI-powered irrigation recommendations, weather forecasts, and crop monitoring tools for farmers and researchers.
       </font></p>
     </article>
+    <aside class="categories-card">
+    <h3>Categories</h3>
+    <ul class="categories-list">
+      <li><a href="#">Crop Monitoring</a></li>
+      <li><a href="#">Weather Forecast</a></li>
+      <li><a href="#">Soil Moisture</a></li>
+      <li><a href="#">Irrigation Scheduling</a></li>
+      <li><a href="#">Sensor Reports</a></li>
+    </ul>
+  </aside>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <hr color="#363020">
-    <p><font face="Times New Roman" size="2" color="#363020">© 2026 Avani</font></p>
+  <footer class="footer">
+    <div class="divider"></div>
+    <p>© 2026 Avani</p>
   </footer>
+
+  <script>
+  // Highlight active nav button
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    if (btn.href === window.location.href) {
+      btn.style.backgroundColor = "#637758";
+    }
+  });
+
+  // Image overlay hover effect
+  const image = document.querySelector('.image');
+  const overlay = document.querySelector('.image-overlay');
+  if (image && overlay) {
+    image.addEventListener('mouseenter', () => {
+      overlay.style.opacity = "0.5";
+    });
+    image.addEventListener('mouseleave', () => {
+      overlay.style.opacity = "0";
+    });
+  }
+
+  // Toggle categories list
+  const categoriesCard = document.querySelector('.categories-card');
+  if (categoriesCard) {
+    const header = categoriesCard.querySelector('h3');
+    const list = categoriesCard.querySelector('.categories-list');
+    header.style.cursor = "pointer";
+    header.addEventListener('click', () => {
+      if (list.style.display === "none") {
+        list.style.display = "block";
+      } else {
+        list.style.display = "none";
+      }
+    });
+  }
+</script>
 
 </body>
 </html>

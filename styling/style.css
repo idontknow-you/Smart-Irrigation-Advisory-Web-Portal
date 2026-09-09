@@ -3,7 +3,8 @@ body{
     margin-left: 60px;
     padding-top: 100px;
     overflow-x: hidden;
-    background-color: #f1f9ea;
+    height: 100%;
+    background-color: #e4ffc9;
 }
 h1{
     color: #230f07;
@@ -35,6 +36,22 @@ h1{
   padding-top: 0;
   border-top: 2px solid #6c9b76;
 }
+.footer {
+  background-color: #031d09;
+  color: #eef7e4;
+  width: calc(100% + 80px);
+  height: calc(100% +20px); 
+  margin-left: -60px;       
+  margin-right: -20px;
+  margin-bottom: -20px;
+  text-align: center;
+  font-size: 15px;
+  display: flex;              /* make it a flex container */
+  justify-content: center;    /* center horizontally */
+  align-items: center;               
+}
+
+
 /* HEADER */
 .top-fixed-header {
   position: fixed;
@@ -104,18 +121,57 @@ h1{
   color:white;
 }
 .nav-btn {
-  display: inline-block;       /* makes it behave like a button */
-  padding: 10px 20px;         /* space inside */
-  margin-right: 15px; 
-  background-color: #cfe9d4;   /* button background */
-  color: white;                /* text color */
-  text-decoration: none;       /* remove underline */
-  border-radius: 8px;          /* rounded corners */
-  font-weight: bold;           /* bold text */
-  font-style: sans-serif;
-  transition: background 0.3s; /* smooth hover effect */
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 15px;
+  background-color: #cfe9d4;
+  color: white;    
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: "Times New Roman", sans-serif;
+  transition: background 0.3s;
+}
+.nav-btn:hover {
+  background-color: #637758;
 }
 
-.nav-btn:hover {
-  background-color: #637758;   /* lighter green on hover */
+/* Categories */
+.categories-card {
+  max-width: 280px;
+  background-color: #ffffff;
+  border: 1px solid #cfe9d4;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-family: "Times New Roman", serif;
+}
+
+.categories-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #230f07;
+}
+
+.categories-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories-list li {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.categories-list li:hover {
+  background-color: #cfe9d4;
+}
+
+.categories-list li a {
+  text-decoration: none;
+  color: #333122;
+  display: block;
 }
