@@ -175,3 +175,51 @@ h1{
   color: #333122;
   display: block;
 }
+
+/* Task 5: Book/Product Card (Box Model) */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.book-card {
+  display: inline-block;
+  width: 220px;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #cfe9d4;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Task 6: Image Gallery Styling */
+.book-card img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid #637758;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.book-card img:hover {
+  transform: scale(1.08);
+}
+
+.book-card figcaption {
+  margin-top: 10px;
+  font-family: "Times New Roman", serif;
+  color: #230f07;
+  font-size: 16px;
+}
