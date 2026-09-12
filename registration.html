@@ -34,68 +34,215 @@
   </div>
   <h2><font face="Times New Roman" size="4" color="#363020"><b>Farmer Registration Form</b></font></h2>
 
-  <form class="styled-form">
+  <form class="styled-form" id="regForm" novalidate>
     <fieldset>
       <legend><font face="Times New Roman" size="3" color="#363020">Farmer Details</font></legend>
 
       <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Name:</font></label>
-        <input type="text" class="form-control" name="name" placeholder="Enter full name" required autofocus>
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Name: <span class="text-danger">*</span></font></label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name" required autofocus>
+        <div class="text-danger" id="nameError"></div>
       </div>
 
       <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Mobile Number:</font></label>
-        <input type="tel" class="form-control" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required>
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Mobile Number: <span class="text-danger">*</span></font></label>
+        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required>
+        <div class="text-danger" id="mobileError"></div>
       </div>
 
       <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Email:</font></label>
-        <input type="email" class="form-control" name="email" placeholder="example@mail.com" required>
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Email: <span class="text-danger">*</span></font></label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.com" required>
+        <div class="text-danger" id="emailError"></div>
       </div>
 
       <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Plot ID:</font></label>
-        <input type="text" class="form-control" name="plotid" required>
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Plot ID: <span class="text-danger">*</span></font></label>
+        <input type="text" class="form-control" id="plotid" name="plotid" required>
+        <div class="text-danger" id="plotidError"></div>
       </div>
 
       <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Village:</font></label>
-        <input type="text" class="form-control" name="village">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Village: <span class="text-danger">*</span></font></label>
+        <input type="text" class="form-control" id="village" name="village">
+        <div class="text-danger" id="villageError"></div>
       </div>
 
       <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Crop Stage:</font></label>
-        <select class="form-select" name="cropstage" required>
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Crop Stage: <span class="text-danger">*</span></font></label>
+        <select class="form-select" id="cropstage" name="cropstage" required>
+          <option value="">-- Select Crop Stage --</option>
           <option value="germination">Germination</option>
           <option value="tillering">Tillering</option>
           <option value="grandgrowth">Grand Growth</option>
           <option value="maturity">Maturity</option>
         </select>
+        <div class="text-danger" id="cropstageError"></div>
       </div>
 
       <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Soil Type:</font></label>
-        <input type="text" class="form-control" name="soiltype">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Soil Type: <span class="text-danger">*</span></font></label>
+        <select class="form-select" id="soiltype" name="soiltype">
+          <option value="">-- Select Soil Type --</option>
+          <option value="clay">Clay</option>
+          <option value="sandy">Sandy</option>
+          <option value="loamy">Loamy</option>
+          <option value="silty">Silty</option>
+          <option value="black">Black (Regur)</option>
+        </select>
+        <div class="text-danger" id="soiltypeError"></div>
       </div>
 
       <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Irrigation Method:</font></label>
-        <input type="text" class="form-control" name="irrigation">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Irrigation Method: <span class="text-danger">*</span></font></label>
+        <select class="form-select" id="irrigation" name="irrigation">
+          <option value="">-- Select Irrigation Method --</option>
+          <option value="drip">Drip</option>
+          <option value="sprinkler">Sprinkler</option>
+          <option value="flood">Flood</option>
+          <option value="manual">Manual</option>
+        </select>
+        <div class="text-danger" id="irrigationError"></div>
       </div>
 
       <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Date:</font></label>
-        <input type="date" class="form-control" name="date" required>
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Soil Moisture (%): <span class="text-danger">*</span></font></label>
+        <input type="number" class="form-control" id="moisture" name="moisture" placeholder="0 - 100" min="0" max="100" step="0.1">
+        <div class="text-danger" id="moistureError"></div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Date: <span class="text-danger">*</span></font></label>
+        <input type="date" class="form-control" id="date" name="date" required>
+        <div class="text-danger" id="dateError"></div>
       </div>
 
       <div class="mb-3">
         <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Farm Photo:</font></label>
-        <input type="file" class="form-control" name="farmphoto" accept="image/*">
+        <input type="file" class="form-control" id="farmphoto" name="farmphoto" accept="image/*">
       </div>
 
       <input type="submit" class="btn-submit" value="Register">
+      <div class="text-success" id="successMsg"></div>
     </fieldset>
   </form>
+
+  <script>
+    function showError(fieldId, message) {
+      document.getElementById(fieldId).classList.add("is-invalid");
+      document.getElementById(fieldId + "Error").textContent = message;
+    }
+
+    function clearError(fieldId) {
+      document.getElementById(fieldId).classList.remove("is-invalid");
+      document.getElementById(fieldId + "Error").textContent = "";
+    }
+
+    // Task 2: required text fields
+    function validateName() {
+      const val = document.getElementById("name").value.trim();
+      const nameRegex = /^[A-Za-z\s]+$/;
+      if (val === "") { showError("name", "Farmer Name is required."); return false; }
+      if (!nameRegex.test(val)) { showError("name", "Name should contain only letters and spaces."); return false; }
+      clearError("name");
+      return true;
+    }
+
+    function validatePlotId() {
+      const val = document.getElementById("plotid").value.trim();
+      if (val === "") { showError("plotid", "Plot ID is required."); return false; }
+      clearError("plotid");
+      return true;
+    }
+
+    function validateVillage() {
+      const val = document.getElementById("village").value.trim();
+      if (val === "") { showError("village", "Village is required."); return false; }
+      clearError("village");
+      return true;
+    }
+
+    // Task 3: mobile number and email
+    function validateMobile() {
+      const val = document.getElementById("mobile").value.trim();
+      const mobileRegex = /^[6-9][0-9]{9}$/;
+      if (val === "") { showError("mobile", "Mobile number is required."); return false; }
+      if (!mobileRegex.test(val)) { showError("mobile", "Enter a valid 10-digit Indian mobile number."); return false; }
+      clearError("mobile");
+      return true;
+    }
+
+    function validateEmail() {
+      const val = document.getElementById("email").value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (val === "") { showError("email", "Email address is required."); return false; }
+      if (!emailRegex.test(val)) { showError("email", "Enter a valid email address."); return false; }
+      clearError("email");
+      return true;
+    }
+
+    // Task 4: selects and date
+    function validateCropStage() {
+      if (document.getElementById("cropstage").value === "") { showError("cropstage", "Please select a crop stage."); return false; }
+      clearError("cropstage");
+      return true;
+    }
+
+    function validateSoilType() {
+      if (document.getElementById("soiltype").value === "") { showError("soiltype", "Please select a soil type."); return false; }
+      clearError("soiltype");
+      return true;
+    }
+
+    function validateIrrigation() {
+      if (document.getElementById("irrigation").value === "") { showError("irrigation", "Please select an irrigation method."); return false; }
+      clearError("irrigation");
+      return true;
+    }
+
+    function validateMoisture() {
+      const val = document.getElementById("moisture").value;
+      if (val === "") { showError("moisture", "Soil moisture (%) is required."); return false; }
+      const num = parseFloat(val);
+      if (isNaN(num) || num < 0 || num > 100) { showError("moisture", "Soil moisture must be a number between 0 and 100."); return false; }
+      clearError("moisture");
+      return true;
+    }
+
+    function validateDate() {
+      const val = document.getElementById("date").value;
+      if (val === "") { showError("date", "Registration date is required."); return false; }
+      const entered = new Date(val);
+      const today = new Date();
+      today.setHours(23, 59, 59, 999);
+      if (entered > today) { showError("date", "Registration date cannot be in the future."); return false; }
+      clearError("date");
+      return true;
+    }
+
+    document.getElementById("name").addEventListener("input", validateName);
+    document.getElementById("mobile").addEventListener("input", validateMobile);
+    document.getElementById("email").addEventListener("input", validateEmail);
+    document.getElementById("plotid").addEventListener("input", validatePlotId);
+    document.getElementById("village").addEventListener("input", validateVillage);
+    document.getElementById("cropstage").addEventListener("change", validateCropStage);
+    document.getElementById("soiltype").addEventListener("change", validateSoilType);
+    document.getElementById("irrigation").addEventListener("change", validateIrrigation);
+    document.getElementById("moisture").addEventListener("input", validateMoisture);
+    document.getElementById("date").addEventListener("change", validateDate);
+
+    document.getElementById("regForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const results = [
+        validateName(), validateMobile(), validateEmail(), validatePlotId(),
+        validateVillage(), validateCropStage(), validateSoilType(),
+        validateIrrigation(), validateMoisture(), validateDate()
+      ];
+      document.getElementById("successMsg").textContent = results.every(Boolean)
+        ? "Farmer registered successfully!"
+        : "";
+    });
+  </script>
 
 </body>
 </html>
