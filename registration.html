@@ -3,70 +3,97 @@
 <head>
   <title>Farmer Registration</title>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styling/style.css">
 </head>
 
 <body style="background-color:#ffffff;">
-    <!-- Header -->
-  <header>
-    <img id="logo" src="assets/full_logo.png" alt="Logo" height="40">
+      <!-- Header -->
+  <div class="top-fixed-header">
+    <header class="header" background="white">
+      <img id="logo" src="assets/full_logo.png" alt="Logo">
+      <div class="header-text">
+        <h1 color="#230f07" >Smart Irrigation Advisory System</h1>
+        <p align="center"><i>Smart Irrigation using AI & Sensor Technology</i></p>
+      </div>
+    </header>
+    <div class="divider"></div>
+  </div>
 
-    <h1><font face="Times New Roman" size="6" color="#363020"><b>Smart Irrigation Advisory System</b></font></h1>
-    <p><font face="Times New Roman" size="4" color="#363020"><i>Smart Irrigation using AI & Sensor Technology</i></font></p>
-    <hr color="#363020">
-  </header>
+
   <!-- Navigation -->
-  <nav>
-    <font face="Times New Roman" size="3" color="#363020">
-      <a href="index.html">Home</a> |
-      <a href="farm-info.html">Farm Dashboard</a> |
-      <a href="advisory.html">Irrigation Advisory</a> |
-      <a href="sensor-data.html">Sensor Data</a> |
-      <a href="contact.html">Contact</a>
-    </font>
-    <hr color="#363020">
-  </nav>
+  <div class="top-fixed-nav">
+    <nav class="nav" >
+        <a href="index.html" class="nav-btn">HOME</a>
+        <a href="farm-info.html" class="nav-btn">FARM DASHBOARD</a>
+        <a href="advisory.html" class="nav-btn">IRRIGATION ADVISORY</a>
+        <a href="sensor-data.html" class="nav-btn">SENSOR DATA</a>
+        <a href="contact.html" class="nav-btn">CONTACT</a>
+    </nav>
+    <div class="divider"></div>
+  </div>
   <h2><font face="Times New Roman" size="4" color="#363020"><b>Farmer Registration Form</b></font></h2>
 
-  <form>
+  <form class="styled-form">
     <fieldset>
       <legend><font face="Times New Roman" size="3" color="#363020">Farmer Details</font></legend>
 
-      <label><font face="Times New Roman" size="3" color="#363020">Name:</font></label>
-      <input type="text" name="name" placeholder="Enter full name" required autofocus><br><br>
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Name:</font></label>
+        <input type="text" class="form-control" name="name" placeholder="Enter full name" required autofocus>
+      </div>
 
-      <label><font face="Times New Roman" size="3" color="#363020">Mobile Number:</font></label>
-      <input type="tel" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required><br><br>
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Mobile Number:</font></label>
+        <input type="tel" class="form-control" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required>
+      </div>
 
-      <label><font face="Times New Roman" size="3" color="#363020">Email:</font></label>
-      <input type="email" name="email" placeholder="example@mail.com" required><br><br>
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Email:</font></label>
+        <input type="email" class="form-control" name="email" placeholder="example@mail.com" required>
+      </div>
 
-      <label><font face="Times New Roman" size="3" color="#363020">Plot ID:</font></label>
-      <input type="text" name="plotid" required><br><br>
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Plot ID:</font></label>
+        <input type="text" class="form-control" name="plotid" required>
+      </div>
 
-      <label><font face="Times New Roman" size="3" color="#363020">Village:</font></label>
-      <input type="text" name="village"><br><br>
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Village:</font></label>
+        <input type="text" class="form-control" name="village">
+      </div>
 
-      <label><font face="Times New Roman" size="3" color="#363020">Crop Stage:</font></label>
-      <select name="cropstage" required>
-        <option value="germination">Germination</option>
-        <option value="tillering">Tillering</option>
-        <option value="grandgrowth">Grand Growth</option>
-        <option value="maturity">Maturity</option>
-      </select><br><br>
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Crop Stage:</font></label>
+        <select class="form-select" name="cropstage" required>
+          <option value="germination">Germination</option>
+          <option value="tillering">Tillering</option>
+          <option value="grandgrowth">Grand Growth</option>
+          <option value="maturity">Maturity</option>
+        </select>
+      </div>
 
-      <label><font face="Times New Roman" size="3" color="#363020">Soil Type:</font></label>
-      <input type="text" name="soiltype"><br><br>
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Soil Type:</font></label>
+        <input type="text" class="form-control" name="soiltype">
+      </div>
 
-      <label><font face="Times New Roman" size="3" color="#363020">Irrigation Method:</font></label>
-      <input type="text" name="irrigation"><br><br>
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Irrigation Method:</font></label>
+        <input type="text" class="form-control" name="irrigation">
+      </div>
 
-      <label><font face="Times New Roman" size="3" color="#363020">Date:</font></label>
-      <input type="date" name="date" required><br><br>
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Date:</font></label>
+        <input type="date" class="form-control" name="date" required>
+      </div>
 
-      <label><font face="Times New Roman" size="3" color="#363020">Farm Photo:</font></label>
-      <input type="file" name="farmphoto" accept="image/*"><br><br>
+      <div class="mb-3">
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Farm Photo:</font></label>
+        <input type="file" class="form-control" name="farmphoto" accept="image/*">
+      </div>
 
-      <input type="submit" value="Register">
+      <input type="submit" class="btn-submit" value="Register">
     </fieldset>
   </form>
 

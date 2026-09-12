@@ -3,9 +3,56 @@
 <head>
   <title>Contact Us</title>
   <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="styling/style.css">
+
+  <!-- Task 2: Internal CSS for Navigation Menu -->
+  <style>
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 10px 0;
+      background-color: #e4ffc9;
+      text-align: center;
+      font-family: "Times New Roman", serif;
+    }
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333122;
+      font-size: 18px;
+      padding: 8px 14px;
+      transition: color 0.3s, background-color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffffff;
+      background-color: #637758;
+      border-radius: 6px;
+    }
+  </style>
 </head>
 
 <body style="background-color:#edffeb;">
+
+  <!-- Task 1: Inline CSS on header, h1, p -->
+  <header style="background-color:#cfe9d4; padding:20px; border:2px solid #637758; border-radius:8px;">
+    <img id="logo" src="assets/full_logo.png" alt="Logo" height="50">
+    <h1 style="color:#230f07; font-family:'Times New Roman', serif; margin:10px 0 0 0;">Smart Irrigation Advisory System</h1>
+    <p style="text-align:center; color:#363020; font-family:'Times New Roman', serif;"><i>Smart Irrigation using AI &amp; Sensor Technology</i></p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="farm-info.html">Farm Dashboard</a></li>
+      <li><a href="advisory.html">Irrigation Advisory</a></li>
+      <li><a href="sensor-data.html">Sensor Data</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <h2><font face="Times New Roman" size="4" color="#363020"><b>Contact Us</b></font></h2>
 
