@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Irrigation Recommendation</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styling/style.css">
+</head>
+
+<body style="background-color:#ffffff;">
+  <div class="top-fixed-header">
+    <header class="header" background="white">
+      <img id="logo" src="assets/full_logo.png" alt="Logo">
+      <div class="header-text">
+        <h1 color="#230f07" >Smart Irrigation Advisory System</h1>
+        <p align="center"><i>Smart Irrigation using AI & Sensor Technology</i></p>
+      </div>
+    </header>
+    <div class="divider"></div>
+  </div>
+
+  <div class="top-fixed-nav">
+    <nav class="nav" >
+        <a href="index.html" class="nav-btn">HOME</a>
+        <a href="farm-info.html" class="nav-btn">FARM DASHBOARD</a>
+        <a href="advisory.html" class="nav-btn">IRRIGATION ADVISORY</a>
+        <a href="sensor-data.html" class="nav-btn">SENSOR DATA</a>
+        <a href="contact.html" class="nav-btn">CONTACT</a>
+    </nav>
+    <div class="divider"></div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-content">
+      <h2><font face="Times New Roman" size="4" color="#363020"><b>Irrigation Recommendation</b></font></h2>
+      <p><font face="Times New Roman" size="3" color="#363020">Enter the plot's soil moisture, rainfall forecast and crop stage to get an irrigation recommendation.</font></p>
+      <button type="button" class="btn-submit" id="recBtn">Get Recommendation</button>
+      <div id="output"></div>
+    </div>
+  </div>
+
+
+  <script>
+    document.getElementById("recBtn").addEventListener("click", function () {
+      var soilMoisture = parseFloat(prompt("Enter Soil Moisture (%):"));
+      var rainExpected = prompt("Is rain expected? (yes/no):").trim().toLowerCase();
+      var cropStage = prompt("Enter Crop Stage:");
+      var recommendation;
+      if (rainExpected === "yes") {
+        recommendation = "Postpone Irrigation";
+      } else if (soilMoisture < 30) {
+        recommendation = "Irrigation Required Immediately";
+      } else if (soilMoisture <= 50) {
+        recommendation = "Monitor Soil Moisture";
+      } else {
+        recommendation = "Irrigation Not Required";
+      }
+      alert("Recommendation: " + recommendation);
+      document.getElementById("output").innerHTML =
+        "<p><font face='Times New Roman' size='3' color='#363020'>" +
+        "<strong>Soil Moisture:</strong> " + soilMoisture + "%<br>" +
+        "<strong>Rain Expected:</strong> " + rainExpected + "<br>" +
+        "<strong>Crop Stage:</strong> " + cropStage + "<br>" +
+        "<strong>Recommendation:</strong> " + recommendation +
+        "</font></p>";
+    });
+  </script>
+
+</body>
+</html>

@@ -58,7 +58,7 @@
 
       <div class="mb-3">
         <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Plot ID: <span class="text-danger">*</span></font></label>
-        <input type="text" class="form-control" id="plotid" name="plotid" required>
+        <input type="text" class="form-control" id="plotid" name="plotid" placeholder="AGR-1234" pattern="AGR-[0-9]{4}" required>
         <div class="text-danger" id="plotidError"></div>
       </div>
 
@@ -112,7 +112,7 @@
       </div>
 
       <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Date: <span class="text-danger">*</span></font></label>
+        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Irrigation Date: <span class="text-danger">*</span></font></label>
         <input type="date" class="form-control" id="date" name="date" required>
         <div class="text-danger" id="dateError"></div>
       </div>
@@ -150,7 +150,9 @@
 
     function validatePlotId() {
       const val = document.getElementById("plotid").value.trim();
+      const plotIdRegex = /^AGR-[0-9]{4}$/;
       if (val === "") { showError("plotid", "Plot ID is required."); return false; }
+      if (!plotIdRegex.test(val)) { showError("plotid", "Plot ID must follow the format AGR-1234."); return false; }
       clearError("plotid");
       return true;
     }
