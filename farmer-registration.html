@@ -78,17 +78,17 @@ section{padding-top:30px}
   <div class="divider"></div>
 </div>
 
-<!-- Navigation -->
-<div class="top-fixed-nav">
-  <nav class="nav" >
-      <a href="index.html" class="nav-btn">HOME</a>
-      <a href="registration.html" class="nav-btn">REGISTRATION</a>
-      <a href="farm-info.html" class="nav-btn">FARM DASHBOARD</a>
-      <a href="advisory.html" class="nav-btn">IRRIGATION ADVISORY</a>
-      <a href="contact.html" class="nav-btn">CONTACT</a>
-  </nav>
-  <div class="divider"></div>
-</div>
+  <!-- Navigation -->
+  <div class="top-fixed-nav">
+    <nav class="nav" >
+        <a href="index.html" class="nav-btn">HOME</a>
+        <a href="registration.html" class="nav-btn">REGISTRATION</a>
+        <a href="farm-info.html" class="nav-btn">FARM DASHBOARD</a>
+        <a href="advisory.html" class="nav-btn">IRRIGATION ADVISORY</a>
+        <a href="contact.html" class="nav-btn">CONTACT</a>
+    </nav>
+    <div class="divider"></div>
+  </div>
 
 <section>
 <article>
@@ -98,7 +98,7 @@ section{padding-top:30px}
 
 <!-- STEP 1 -->
 <fieldset id="step1">
-<legend>Step 1 · Check Farm</legend>
+<legend>Step 1 · Register Farm</legend>
 <div class="row">
 <div><label for="name">Farmer name</label><input class="form-control" id="name" placeholder="e.g. Ramesh Patil"></div>
 <div><label for="plot">Plot ID</label><input class="form-control" id="plot" placeholder="e.g. PLT-101"></div>
@@ -113,7 +113,7 @@ section{padding-top:30px}
 </select></div>
 <div><label for="moist">Soil moisture (%)</label><input class="form-control" id="moist" type="number" min="0" max="100" step="0.1"></div>
 </div>
-<button class="btn-submit" id="regBtn">Check Farm</button>
+<button class="btn-submit" id="regBtn">Register &amp; display farm info</button>
 <div class="out" id="regOut"></div>
 </fieldset>
 
@@ -183,10 +183,8 @@ const esc = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",
 
 // ---------- Step 1: farm object ----------
 $("regBtn").onclick = () => {
-  const name = $("name").value.trim(), plot = $("plot").value.trim().toUpperCase();
+  const name = $("name").value.trim(), plot = $("plot").value.trim();
   const area = parseFloat($("area").value), moist = parseFloat($("moist").value);
-  if (plot && !/^PLT-\d{3}$/.test(plot))
-    return show("regOut", "⚠️ Plot ID must be in the format PLT-102 (PLT, hyphen, 3 digits).", true);
   if (!name || !plot || !(area > 0) || isNaN(moist) || moist < 0 || moist > 100)
     return show("regOut", "⚠️ Enter name, plot ID, area &gt; 0 and soil moisture between 0–100.", true);
 
@@ -206,9 +204,8 @@ $("regBtn").onclick = () => {
         <p><b>Pump status:</b> ${this.pumpStatus}</p>`;
     }
   };
-  show("regOut", "✅ Farm Found" + farm.displayInfo());
+  show("regOut", "✅ Registered successfully" + farm.displayInfo());
 };
-
 
 // ---------- Step 2: sensor array ----------
 $("sensBtn").onclick = () => {

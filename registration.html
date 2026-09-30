@@ -2,132 +2,206 @@
 <html lang="en">
 <head>
   <title>Farmer Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="stylesheet" type="text/css" href="styling/style.css">
+
+  <style>
+    .nav{
+      margin: 0px;
+      margin-left: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: white;
+      color: #dbf1ca;
+    }
+    .nav a:link{
+        color: #333122;
+    }
+    .nav a:visited{
+        color: #545138;
+    }
+    .nav a:hover{
+      color:white;
+    }
+    .nav-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-right: 15px;
+      background-color: #cfe9d4;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-family: "Times New Roman", sans-serif;
+      transition: background 0.3s;
+    }
+    .nav-btn:hover {
+      background-color: #637758;
+    }
+  </style>
+
+  <style>
+    /* Page-specific additions (not covered by style.css) */
+    *{box-sizing:border-box}
+    body{height:auto;min-height:calc(100vh - 40px);display:flex;flex-direction:column}
+    section{flex:1;padding-top:30px;padding-bottom:30px}
+    section h2{font-family:"Times New Roman",serif;font-size:18px;color:#363020;text-align:center}
+
+    /* Replacements for the Bootstrap classes used by the form and JS */
+    .mb-3{margin-bottom:14px}
+    .form-label{display:block;font-family:"Times New Roman",serif;font-size:16px;font-weight:bold;color:#230f07;margin-bottom:4px}
+    .text-danger{color:#d9534f}
+    .text-success{color:#2e7d32;font-weight:bold;margin-top:12px}
+    .form-control.is-invalid,.form-select.is-invalid{border-color:#d9534f}
+    .form-control.is-invalid:focus,.form-select.is-invalid:focus{box-shadow:0 0 6px rgba(217,83,79,0.5)}
+    #regForm .text-danger{font-family:"Times New Roman",serif;font-size:14px;min-height:0}
+
+    .footer{margin-top:auto;padding:16px 0}
+  </style>
 </head>
 
-<body style="background-color:#ffffff;">
-      <!-- Header -->
+<body>
+
+  <!-- Header -->
   <div class="top-fixed-header">
-    <header class="header" background="white">
+    <header class="header">
       <img id="logo" src="assets/full_logo.png" alt="Logo">
       <div class="header-text">
-        <h1 color="#230f07" >Smart Irrigation Advisory System</h1>
-        <p align="center"><i>Smart Irrigation using AI & Sensor Technology</i></p>
+        <h1>Smart Irrigation Advisory System</h1>
+        <p><i>Smart Irrigation using AI &amp; Sensor Technology</i></p>
       </div>
     </header>
     <div class="divider"></div>
   </div>
 
-
   <!-- Navigation -->
   <div class="top-fixed-nav">
     <nav class="nav" >
         <a href="index.html" class="nav-btn">HOME</a>
+        <a href="registration.html" class="nav-btn">REGISTRATION</a>
         <a href="farm-info.html" class="nav-btn">FARM DASHBOARD</a>
         <a href="advisory.html" class="nav-btn">IRRIGATION ADVISORY</a>
-        <a href="sensor-data.html" class="nav-btn">SENSOR DATA</a>
         <a href="contact.html" class="nav-btn">CONTACT</a>
     </nav>
     <div class="divider"></div>
   </div>
-  <h2><font face="Times New Roman" size="4" color="#363020"><b>Farmer Registration Form</b></font></h2>
 
-  <form class="styled-form" id="regForm" novalidate>
-    <fieldset>
-      <legend><font face="Times New Roman" size="3" color="#363020">Farmer Details</font></legend>
+  <!-- Main Section -->
+  <section>
+    <article>
+      <h2><b>Farmer Registration Form</b></h2>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Name: <span class="text-danger">*</span></font></label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name" required autofocus>
-        <div class="text-danger" id="nameError"></div>
-      </div>
+      <form class="styled-form" id="regForm" novalidate>
+        <fieldset>
+          <legend>Farmer Details</legend>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Mobile Number: <span class="text-danger">*</span></font></label>
-        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required>
-        <div class="text-danger" id="mobileError"></div>
-      </div>
+          <div class="mb-3">
+            <label class="form-label" for="name">Name: <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name" required autofocus>
+            <div class="text-danger" id="nameError"></div>
+          </div>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Email: <span class="text-danger">*</span></font></label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.com" required>
-        <div class="text-danger" id="emailError"></div>
-      </div>
+          <div class="mb-3">
+            <label class="form-label" for="mobile">Mobile Number: <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required>
+            <div class="text-danger" id="mobileError"></div>
+          </div>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Plot ID: <span class="text-danger">*</span></font></label>
-        <input type="text" class="form-control" id="plotid" name="plotid" placeholder="AGR-1234" pattern="AGR-[0-9]{4}" required>
-        <div class="text-danger" id="plotidError"></div>
-      </div>
+          <div class="mb-3">
+            <label class="form-label" for="email">Email: <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.com" required>
+            <div class="text-danger" id="emailError"></div>
+          </div>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Village: <span class="text-danger">*</span></font></label>
-        <input type="text" class="form-control" id="village" name="village">
-        <div class="text-danger" id="villageError"></div>
-      </div>
+          <div class="mb-3">
+            <label class="form-label" for="plotid">Plot ID: <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="plotid" name="plotid" placeholder="PLT-123" pattern="PLT-[0-9]{3}" required>
+            <div class="text-danger" id="plotidError"></div>
+          </div>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Crop Stage: <span class="text-danger">*</span></font></label>
-        <select class="form-select" id="cropstage" name="cropstage" required>
-          <option value="">-- Select Crop Stage --</option>
-          <option value="germination">Germination</option>
-          <option value="tillering">Tillering</option>
-          <option value="grandgrowth">Grand Growth</option>
-          <option value="maturity">Maturity</option>
-        </select>
-        <div class="text-danger" id="cropstageError"></div>
-      </div>
+          <div class="mb-3">
+            <label class="form-label" for="village">Village: <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="village" name="village">
+            <div class="text-danger" id="villageError"></div>
+          </div>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Soil Type: <span class="text-danger">*</span></font></label>
-        <select class="form-select" id="soiltype" name="soiltype">
-          <option value="">-- Select Soil Type --</option>
-          <option value="clay">Clay</option>
-          <option value="sandy">Sandy</option>
-          <option value="loamy">Loamy</option>
-          <option value="silty">Silty</option>
-          <option value="black">Black (Regur)</option>
-        </select>
-        <div class="text-danger" id="soiltypeError"></div>
-      </div>
+          <div class="mb-3">
+            <label class="form-label" for="cropstage">Crop Stage: <span class="text-danger">*</span></label>
+            <select class="form-select" id="cropstage" name="cropstage" required>
+              <option value="">-- Select Crop Stage --</option>
+              <option value="germination">Germination</option>
+              <option value="tillering">Tillering</option>
+              <option value="grandgrowth">Grand Growth</option>
+              <option value="maturity">Maturity</option>
+            </select>
+            <div class="text-danger" id="cropstageError"></div>
+          </div>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Irrigation Method: <span class="text-danger">*</span></font></label>
-        <select class="form-select" id="irrigation" name="irrigation">
-          <option value="">-- Select Irrigation Method --</option>
-          <option value="drip">Drip</option>
-          <option value="sprinkler">Sprinkler</option>
-          <option value="flood">Flood</option>
-          <option value="manual">Manual</option>
-        </select>
-        <div class="text-danger" id="irrigationError"></div>
-      </div>
+          <div class="mb-3">
+            <label class="form-label" for="soiltype">Soil Type: <span class="text-danger">*</span></label>
+            <select class="form-select" id="soiltype" name="soiltype">
+              <option value="">-- Select Soil Type --</option>
+              <option value="clay">Clay</option>
+              <option value="sandy">Sandy</option>
+              <option value="loamy">Loamy</option>
+              <option value="silty">Silty</option>
+              <option value="black">Black (Regur)</option>
+            </select>
+            <div class="text-danger" id="soiltypeError"></div>
+          </div>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Soil Moisture (%): <span class="text-danger">*</span></font></label>
-        <input type="number" class="form-control" id="moisture" name="moisture" placeholder="0 - 100" min="0" max="100" step="0.1">
-        <div class="text-danger" id="moistureError"></div>
-      </div>
+          <div class="mb-3">
+            <label class="form-label" for="irrigation">Irrigation Method: <span class="text-danger">*</span></label>
+            <select class="form-select" id="irrigation" name="irrigation">
+              <option value="">-- Select Irrigation Method --</option>
+              <option value="drip">Drip</option>
+              <option value="sprinkler">Sprinkler</option>
+              <option value="flood">Flood</option>
+              <option value="manual">Manual</option>
+            </select>
+            <div class="text-danger" id="irrigationError"></div>
+          </div>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Irrigation Date: <span class="text-danger">*</span></font></label>
-        <input type="date" class="form-control" id="date" name="date" required>
-        <div class="text-danger" id="dateError"></div>
-      </div>
+          <div class="mb-3">
+            <label class="form-label" for="moisture">Soil Moisture (%): <span class="text-danger">*</span></label>
+            <input type="number" class="form-control" id="moisture" name="moisture" placeholder="0 - 100" min="0" max="100" step="0.1">
+            <div class="text-danger" id="moistureError"></div>
+          </div>
 
-      <div class="mb-3">
-        <label class="form-label"><font face="Times New Roman" size="3" color="#363020">Farm Photo:</font></label>
-        <input type="file" class="form-control" id="farmphoto" name="farmphoto" accept="image/*">
-      </div>
+          <div class="mb-3">
+            <label class="form-label" for="date">Irrigation Date: <span class="text-danger">*</span></label>
+            <input type="date" class="form-control" id="date" name="date" required>
+            <div class="text-danger" id="dateError"></div>
+          </div>
 
-      <input type="submit" class="btn-submit" value="Register">
-      <div class="text-success" id="successMsg"></div>
-    </fieldset>
-  </form>
+          <div class="mb-3">
+            <label class="form-label" for="farmphoto">Farm Photo:</label>
+            <input type="file" class="form-control" id="farmphoto" name="farmphoto" accept="image/*">
+          </div>
+
+          <input type="submit" class="btn-submit" value="Register">
+          <div class="text-success" id="successMsg"></div>
+        </fieldset>
+      </form>
+    </article>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="divider"></div>
+    <p>© 2026 Avani</p>
+  </footer>
 
   <script>
+    // Highlight active nav button
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      if (btn.href === window.location.href) {
+        btn.style.backgroundColor = "#637758";
+      }
+    });
+
     function showError(fieldId, message) {
       document.getElementById(fieldId).classList.add("is-invalid");
       document.getElementById(fieldId + "Error").textContent = message;
@@ -138,7 +212,6 @@
       document.getElementById(fieldId + "Error").textContent = "";
     }
 
-    // Task 2: required text fields
     function validateName() {
       const val = document.getElementById("name").value.trim();
       const nameRegex = /^[A-Za-z\s]+$/;
@@ -150,9 +223,9 @@
 
     function validatePlotId() {
       const val = document.getElementById("plotid").value.trim();
-      const plotIdRegex = /^AGR-[0-9]{4}$/;
+      const plotIdRegex = /^PLT-[0-9]{3}$/;
       if (val === "") { showError("plotid", "Plot ID is required."); return false; }
-      if (!plotIdRegex.test(val)) { showError("plotid", "Plot ID must follow the format AGR-1234."); return false; }
+      if (!plotIdRegex.test(val)) { showError("plotid", "Plot ID must follow the format PLT-123."); return false; }
       clearError("plotid");
       return true;
     }
@@ -164,7 +237,6 @@
       return true;
     }
 
-    // Task 3: mobile number and email
     function validateMobile() {
       const val = document.getElementById("mobile").value.trim();
       const mobileRegex = /^[6-9][0-9]{9}$/;
@@ -183,7 +255,6 @@
       return true;
     }
 
-    // Task 4: selects and date
     function validateCropStage() {
       if (document.getElementById("cropstage").value === "") { showError("cropstage", "Please select a crop stage."); return false; }
       clearError("cropstage");
