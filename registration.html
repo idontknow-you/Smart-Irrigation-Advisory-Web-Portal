@@ -2,75 +2,20 @@
 <html lang="en">
 <head>
   <title>Farmer Registration</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styling/style.css">
-
-  <style>
-    .nav{
-      margin: 0px;
-      margin-left: 20px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      background-color: white;
-      color: #dbf1ca;
-    }
-    .nav a:link{
-        color: #333122;
-    }
-    .nav a:visited{
-        color: #545138;
-    }
-    .nav a:hover{
-      color:white;
-    }
-    .nav-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-right: 15px;
-      background-color: #cfe9d4;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-family: "Times New Roman", sans-serif;
-      transition: background 0.3s;
-    }
-    .nav-btn:hover {
-      background-color: #637758;
-    }
-  </style>
-
-  <style>
-    /* Page-specific additions (not covered by style.css) */
-    *{box-sizing:border-box}
-    body{height:auto;min-height:calc(100vh - 40px);display:flex;flex-direction:column}
-    section{flex:1;padding-top:30px;padding-bottom:30px}
-    section h2{font-family:"Times New Roman",serif;font-size:18px;color:#363020;text-align:center}
-
-    /* Replacements for the Bootstrap classes used by the form and JS */
-    .mb-3{margin-bottom:14px}
-    .form-label{display:block;font-family:"Times New Roman",serif;font-size:16px;font-weight:bold;color:#230f07;margin-bottom:4px}
-    .text-danger{color:#d9534f}
-    .text-success{color:#2e7d32;font-weight:bold;margin-top:12px}
-    .form-control.is-invalid,.form-select.is-invalid{border-color:#d9534f}
-    .form-control.is-invalid:focus,.form-select.is-invalid:focus{box-shadow:0 0 6px rgba(217,83,79,0.5)}
-    #regForm .text-danger{font-family:"Times New Roman",serif;font-size:14px;min-height:0}
-
-    .footer{margin-top:auto;padding:16px 0}
-  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
-<body>
-
+<body style="background-color:#ffffff;">
   <!-- Header -->
   <div class="top-fixed-header">
-    <header class="header">
+    <header class="header" background="white">
       <img id="logo" src="assets/full_logo.png" alt="Logo">
       <div class="header-text">
-        <h1>Smart Irrigation Advisory System</h1>
-        <p><i>Smart Irrigation using AI &amp; Sensor Technology</i></p>
+        <h1 color="#230f07">Smart Irrigation Advisory System</h1>
+        <p align="center"><i>Smart Irrigation using AI &amp; Sensor Technology</i></p>
       </div>
     </header>
     <div class="divider"></div>
@@ -78,244 +23,237 @@
 
   <!-- Navigation -->
   <div class="top-fixed-nav">
-    <nav class="nav" >
-        <a href="index.html" class="nav-btn">HOME</a>
-        <a href="registration.html" class="nav-btn">REGISTRATION</a>
-        <a href="farm-info.html" class="nav-btn">FARM DASHBOARD</a>
-        <a href="advisory.html" class="nav-btn">IRRIGATION ADVISORY</a>
-        <a href="contact.html" class="nav-btn">CONTACT</a>
+    <nav class="nav">
+      <a href="index.html" class="nav-btn">HOME</a>
+      <a href="farm-info.html" class="nav-btn">FARM DASHBOARD</a>
+      <a href="advisory.html" class="nav-btn">IRRIGATION ADVISORY</a>
+      <a href="sensor-data.html" class="nav-btn">SENSOR DATA</a>
+      <a href="contact.html" class="nav-btn">CONTACT</a>
     </nav>
     <div class="divider"></div>
   </div>
 
-  <!-- Main Section -->
-  <section>
-    <article>
-      <h2><b>Farmer Registration Form</b></h2>
+  <h2><font face="Times New Roman" size="4" color="#363020"><b>Farmer Registration Form</b></font></h2>
 
-      <form class="styled-form" id="regForm" novalidate>
-        <fieldset>
-          <legend>Farmer Details</legend>
+  <!-- Task 1: Registration form -->
+  <form class="styled-form" id="regForm" novalidate>
+    <fieldset>
+      <legend><font face="Times New Roman" size="3" color="#363020">Farmer Details</font></legend>
 
-          <div class="mb-3">
-            <label class="form-label" for="name">Name: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name" required autofocus>
-            <div class="text-danger" id="nameError"></div>
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="name"><font face="Times New Roman" size="3" color="#363020">Name: <span class="text-danger">*</span></font></label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name" required autofocus>
+        <div class="text-danger" id="nameError"></div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="mobile">Mobile Number: <span class="text-danger">*</span></label>
-            <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required>
-            <div class="text-danger" id="mobileError"></div>
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="mobile"><font face="Times New Roman" size="3" color="#363020">Mobile Number: <span class="text-danger">*</span></font></label>
+        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="10-digit number" required>
+        <div class="text-danger" id="mobileError"></div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="email">Email: <span class="text-danger">*</span></label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.com" required>
-            <div class="text-danger" id="emailError"></div>
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="email"><font face="Times New Roman" size="3" color="#363020">Email: <span class="text-danger">*</span></font></label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="example@mail.com" required>
+        <div class="text-danger" id="emailError"></div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="plotid">Plot ID: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="plotid" name="plotid" placeholder="PLT-123" pattern="PLT-[0-9]{3}" required>
-            <div class="text-danger" id="plotidError"></div>
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="plotid"><font face="Times New Roman" size="3" color="#363020">Plot ID: <span class="text-danger">*</span></font></label>
+        <input type="text" class="form-control" id="plotid" name="plotid" placeholder="e.g. PLOT-101" required>
+        <div class="text-danger" id="plotidError"></div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="village">Village: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="village" name="village">
-            <div class="text-danger" id="villageError"></div>
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="village"><font face="Times New Roman" size="3" color="#363020">Village: <span class="text-danger">*</span></font></label>
+        <input type="text" class="form-control" id="village" name="village" required>
+        <div class="text-danger" id="villageError"></div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="cropstage">Crop Stage: <span class="text-danger">*</span></label>
-            <select class="form-select" id="cropstage" name="cropstage" required>
-              <option value="">-- Select Crop Stage --</option>
-              <option value="germination">Germination</option>
-              <option value="tillering">Tillering</option>
-              <option value="grandgrowth">Grand Growth</option>
-              <option value="maturity">Maturity</option>
-            </select>
-            <div class="text-danger" id="cropstageError"></div>
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="cropstage"><font face="Times New Roman" size="3" color="#363020">Crop Stage: <span class="text-danger">*</span></font></label>
+        <select class="form-select" id="cropstage" name="cropstage" required>
+          <option value="">-- Select Crop Stage --</option>
+          <option value="germination">Germination</option>
+          <option value="tillering">Tillering</option>
+          <option value="grandgrowth">Grand Growth</option>
+          <option value="maturity">Maturity</option>
+        </select>
+        <div class="text-danger" id="cropstageError"></div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="soiltype">Soil Type: <span class="text-danger">*</span></label>
-            <select class="form-select" id="soiltype" name="soiltype">
-              <option value="">-- Select Soil Type --</option>
-              <option value="clay">Clay</option>
-              <option value="sandy">Sandy</option>
-              <option value="loamy">Loamy</option>
-              <option value="silty">Silty</option>
-              <option value="black">Black (Regur)</option>
-            </select>
-            <div class="text-danger" id="soiltypeError"></div>
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="soiltype"><font face="Times New Roman" size="3" color="#363020">Soil Type: <span class="text-danger">*</span></font></label>
+        <select class="form-select" id="soiltype" name="soiltype" required>
+          <option value="">-- Select Soil Type --</option>
+          <option value="clay">Clay</option>
+          <option value="sandy">Sandy</option>
+          <option value="loamy">Loamy</option>
+          <option value="silty">Silty</option>
+          <option value="black">Black (Regur)</option>
+        </select>
+        <div class="text-danger" id="soiltypeError"></div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="irrigation">Irrigation Method: <span class="text-danger">*</span></label>
-            <select class="form-select" id="irrigation" name="irrigation">
-              <option value="">-- Select Irrigation Method --</option>
-              <option value="drip">Drip</option>
-              <option value="sprinkler">Sprinkler</option>
-              <option value="flood">Flood</option>
-              <option value="manual">Manual</option>
-            </select>
-            <div class="text-danger" id="irrigationError"></div>
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="irrigation"><font face="Times New Roman" size="3" color="#363020">Irrigation Method: <span class="text-danger">*</span></font></label>
+        <select class="form-select" id="irrigation" name="irrigation" required>
+          <option value="">-- Select Irrigation Method --</option>
+          <option value="drip">Drip</option>
+          <option value="sprinkler">Sprinkler</option>
+          <option value="flood">Flood</option>
+          <option value="manual">Manual</option>
+        </select>
+        <div class="text-danger" id="irrigationError"></div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="moisture">Soil Moisture (%): <span class="text-danger">*</span></label>
-            <input type="number" class="form-control" id="moisture" name="moisture" placeholder="0 - 100" min="0" max="100" step="0.1">
-            <div class="text-danger" id="moistureError"></div>
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="moisture"><font face="Times New Roman" size="3" color="#363020">Soil Moisture (%): <span class="text-danger">*</span></font></label>
+        <input type="number" class="form-control" id="moisture" name="moisture" placeholder="0 - 100" min="0" max="100" step="0.1" required>
+        <div class="text-danger" id="moistureError"></div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="date">Irrigation Date: <span class="text-danger">*</span></label>
-            <input type="date" class="form-control" id="date" name="date" required>
-            <div class="text-danger" id="dateError"></div>
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="date"><font face="Times New Roman" size="3" color="#363020">Registration Date: <span class="text-danger">*</span></font></label>
+        <input type="date" class="form-control" id="date" name="date" required>
+        <div class="text-danger" id="dateError"></div>
+      </div>
 
-          <div class="mb-3">
-            <label class="form-label" for="farmphoto">Farm Photo:</label>
-            <input type="file" class="form-control" id="farmphoto" name="farmphoto" accept="image/*">
-          </div>
+      <div class="mb-3">
+        <label class="form-label" for="farmphoto"><font face="Times New Roman" size="3" color="#363020">Farm Photo:</font></label>
+        <input type="file" class="form-control" id="farmphoto" name="farmphoto" accept="image/*">
+      </div>
 
-          <input type="submit" class="btn-submit" value="Register">
-          <div class="text-success" id="successMsg"></div>
-        </fieldset>
-      </form>
-    </article>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="divider"></div>
-    <p>© 2026 Avani</p>
-  </footer>
+      <input type="submit" class="btn-submit" value="Register">
+      <input type="reset" class="btn-submit" value="Reset" id="resetBtn">
+      <div class="text-success" id="successMsg"></div>
+    </fieldset>
+  </form>
 
   <script>
-    // Highlight active nav button
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-      if (btn.href === window.location.href) {
-        btn.style.backgroundColor = "#637758";
+    $(document).ready(function () {
+
+      /* ---------- helpers ---------- */
+      function showError(fieldId, message) {
+        $("#" + fieldId).addClass("is-invalid");
+        $("#" + fieldId + "Error").text(message);
       }
-    });
 
-    function showError(fieldId, message) {
-      document.getElementById(fieldId).classList.add("is-invalid");
-      document.getElementById(fieldId + "Error").textContent = message;
-    }
+      function clearError(fieldId) {
+        $("#" + fieldId).removeClass("is-invalid");
+        $("#" + fieldId + "Error").text("");
+      }
 
-    function clearError(fieldId) {
-      document.getElementById(fieldId).classList.remove("is-invalid");
-      document.getElementById(fieldId + "Error").textContent = "";
-    }
+      function requireSelect(fieldId, message) {
+        if ($("#" + fieldId).val() === "") { showError(fieldId, message); return false; }
+        clearError(fieldId);
+        return true;
+      }
 
-    function validateName() {
-      const val = document.getElementById("name").value.trim();
-      const nameRegex = /^[A-Za-z\s]+$/;
-      if (val === "") { showError("name", "Farmer Name is required."); return false; }
-      if (!nameRegex.test(val)) { showError("name", "Name should contain only letters and spaces."); return false; }
-      clearError("name");
-      return true;
-    }
+      /* ---------- Task 2: required text fields ---------- */
+      function validateName() {
+        const val = $("#name").val().trim();
+        if (val === "") { showError("name", "Farmer Name is required."); return false; }
+        if (!/^[A-Za-z\s]+$/.test(val)) { showError("name", "Name should contain only letters and spaces."); return false; }
+        clearError("name");
+        return true;
+      }
 
-    function validatePlotId() {
-      const val = document.getElementById("plotid").value.trim();
-      const plotIdRegex = /^PLT-[0-9]{3}$/;
-      if (val === "") { showError("plotid", "Plot ID is required."); return false; }
-      if (!plotIdRegex.test(val)) { showError("plotid", "Plot ID must follow the format PLT-123."); return false; }
-      clearError("plotid");
-      return true;
-    }
+      function validatePlotId() {
+        const val = $("#plotid").val().trim();
+        if (val === "") { showError("plotid", "Plot ID is required."); return false; }
+        if (!/^[A-Za-z0-9-]{3,15}$/.test(val)) { showError("plotid", "Plot ID must be 3-15 letters, digits or hyphens."); return false; }
+        clearError("plotid");
+        return true;
+      }
 
-    function validateVillage() {
-      const val = document.getElementById("village").value.trim();
-      if (val === "") { showError("village", "Village is required."); return false; }
-      clearError("village");
-      return true;
-    }
+      function validateVillage() {
+        const val = $("#village").val().trim();
+        if (val === "") { showError("village", "Village is required."); return false; }
+        clearError("village");
+        return true;
+      }
 
-    function validateMobile() {
-      const val = document.getElementById("mobile").value.trim();
-      const mobileRegex = /^[6-9][0-9]{9}$/;
-      if (val === "") { showError("mobile", "Mobile number is required."); return false; }
-      if (!mobileRegex.test(val)) { showError("mobile", "Enter a valid 10-digit Indian mobile number."); return false; }
-      clearError("mobile");
-      return true;
-    }
+      /* ---------- Task 3: mobile number and email ---------- */
+      function validateMobile() {
+        const val = $("#mobile").val().trim();
+        if (val === "") { showError("mobile", "Mobile number is required."); return false; }
+        if (!/^[6-9][0-9]{9}$/.test(val)) { showError("mobile", "Enter a valid 10-digit Indian mobile number."); return false; }
+        clearError("mobile");
+        return true;
+      }
 
-    function validateEmail() {
-      const val = document.getElementById("email").value.trim();
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (val === "") { showError("email", "Email address is required."); return false; }
-      if (!emailRegex.test(val)) { showError("email", "Enter a valid email address."); return false; }
-      clearError("email");
-      return true;
-    }
+      function validateEmail() {
+        const val = $("#email").val().trim();
+        if (val === "") { showError("email", "Email address is required."); return false; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { showError("email", "Enter a valid email address."); return false; }
+        clearError("email");
+        return true;
+      }
 
-    function validateCropStage() {
-      if (document.getElementById("cropstage").value === "") { showError("cropstage", "Please select a crop stage."); return false; }
-      clearError("cropstage");
-      return true;
-    }
+      /* ---------- Task 4: selects, moisture and date ---------- */
+      function validateCropStage() { return requireSelect("cropstage", "Please select a crop stage."); }
+      function validateSoilType()  { return requireSelect("soiltype", "Please select a soil type."); }
+      function validateIrrigation(){ return requireSelect("irrigation", "Please select an irrigation method."); }
 
-    function validateSoilType() {
-      if (document.getElementById("soiltype").value === "") { showError("soiltype", "Please select a soil type."); return false; }
-      clearError("soiltype");
-      return true;
-    }
+      function validateMoisture() {
+        const val = $("#moisture").val();
+        if (val === "") { showError("moisture", "Soil moisture (%) is required."); return false; }
+        const num = parseFloat(val);
+        if (isNaN(num) || num < 0 || num > 100) { showError("moisture", "Soil moisture must be a number between 0 and 100."); return false; }
+        clearError("moisture");
+        return true;
+      }
 
-    function validateIrrigation() {
-      if (document.getElementById("irrigation").value === "") { showError("irrigation", "Please select an irrigation method."); return false; }
-      clearError("irrigation");
-      return true;
-    }
+      // today's date as YYYY-MM-DD (local time)
+      function todayString() {
+        const d = new Date();
+        return d.getFullYear() + "-" +
+               String(d.getMonth() + 1).padStart(2, "0") + "-" +
+               String(d.getDate()).padStart(2, "0");
+      }
 
-    function validateMoisture() {
-      const val = document.getElementById("moisture").value;
-      if (val === "") { showError("moisture", "Soil moisture (%) is required."); return false; }
-      const num = parseFloat(val);
-      if (isNaN(num) || num < 0 || num > 100) { showError("moisture", "Soil moisture must be a number between 0 and 100."); return false; }
-      clearError("moisture");
-      return true;
-    }
+      function validateDate() {
+        const val = $("#date").val();
+        if (val === "") { showError("date", "Registration date is required."); return false; }
+        if (val > todayString()) { showError("date", "Registration date cannot be in the future."); return false; }
+        clearError("date");
+        return true;
+      }
 
-    function validateDate() {
-      const val = document.getElementById("date").value;
-      if (val === "") { showError("date", "Registration date is required."); return false; }
-      const entered = new Date(val);
-      const today = new Date();
-      today.setHours(23, 59, 59, 999);
-      if (entered > today) { showError("date", "Registration date cannot be in the future."); return false; }
-      clearError("date");
-      return true;
-    }
+      $("#date").attr("max", todayString());
 
-    document.getElementById("name").addEventListener("input", validateName);
-    document.getElementById("mobile").addEventListener("input", validateMobile);
-    document.getElementById("email").addEventListener("input", validateEmail);
-    document.getElementById("plotid").addEventListener("input", validatePlotId);
-    document.getElementById("village").addEventListener("input", validateVillage);
-    document.getElementById("cropstage").addEventListener("change", validateCropStage);
-    document.getElementById("soiltype").addEventListener("change", validateSoilType);
-    document.getElementById("irrigation").addEventListener("change", validateIrrigation);
-    document.getElementById("moisture").addEventListener("input", validateMoisture);
-    document.getElementById("date").addEventListener("change", validateDate);
+      /* ---------- live validation events ---------- */
+      $("#name").on("input", validateName);
+      $("#mobile").on("input", validateMobile);
+      $("#email").on("input", validateEmail);
+      $("#plotid").on("input", validatePlotId);
+      $("#village").on("input", validateVillage);
+      $("#moisture").on("input", validateMoisture);
+      $("#cropstage").on("change", validateCropStage);
+      $("#soiltype").on("change", validateSoilType);
+      $("#irrigation").on("change", validateIrrigation);
+      $("#date").on("change", validateDate);
 
-    document.getElementById("regForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const results = [
-        validateName(), validateMobile(), validateEmail(), validatePlotId(),
-        validateVillage(), validateCropStage(), validateSoilType(),
-        validateIrrigation(), validateMoisture(), validateDate()
-      ];
-      document.getElementById("successMsg").textContent = results.every(Boolean)
-        ? "Farmer registered successfully!"
-        : "";
+      /* ---------- submit ---------- */
+      $("#regForm").on("submit", function (e) {
+        e.preventDefault();
+        const results = [
+          validateName(), validateMobile(), validateEmail(), validatePlotId(),
+          validateVillage(), validateCropStage(), validateSoilType(),
+          validateIrrigation(), validateMoisture(), validateDate()
+        ];
+        $("#successMsg").text(results.every(Boolean) ? "Farmer registered successfully!" : "");
+      });
+
+      /* ---------- reset ---------- */
+      $("#regForm").on("reset", function () {
+        $(this).find(".is-invalid").removeClass("is-invalid");
+        $(this).find(".text-danger").text("");
+        $("#successMsg").text("");
+      });
+
     });
   </script>
-
 </body>
 </html>
